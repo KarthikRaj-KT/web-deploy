@@ -1,9 +1,129 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>GitHub to EC2 Deployment</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karthik Raj — AWS Themed Profile</title>
+  <style>
+    :root{
+      --aws-orange:#FF9900;
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa6b2;
+      --glass: rgba(255,255,255,0.03);
+    }
+    html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+    body{
+      background: linear-gradient(180deg,#071023 0%, #071526 40%, #06172a 100%);
+      color:#e6eef5;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;align-items:center;justify-content:center;padding:40px;
+    }
+    .container{width:100%;max-width:980px}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:18px;padding:28px;box-shadow:0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)
+    }
+    .header{display:flex;gap:20px;align-items:center}
+    .badge{
+      width:92px;height:92px;border-radius:16px;background:linear-gradient(135deg,var(--aws-orange),#ffb86b);display:flex;align-items:center;justify-content:center;font-weight:700;color:#07202a;box-shadow:0 6px 18px rgba(255,153,0,0.12)
+    }
+    .badge svg{width:48px;height:48px}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:18px}
+    .service{
+      background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);backdrop-filter: blur(6px);
+    }
+    .service h3{margin:0 0 8px;font-size:16px}
+    .service p{margin:0;color:var(--muted);font-size:13px}
+    .cta{display:flex;gap:10px;margin-top:18px}
+    .btn{padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+    .btn--primary{background:var(--aws-orange);color:#07202a}
+    .btn--ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+    .footer{display:flex;justify-content:space-between;align-items:center;margin-top:22px;color:var(--muted);font-size:13px}
+    .cloud-illustration{position:absolute;right:40px;top:40px;opacity:0.06;filter:blur(1px)}
+    /* small screens */
+    @media (max-width:640px){body{padding:18px}.header{flex-direction:row}.badge{width:72px;height:72px}}
+  </style>
 </head>
 <body>
-    <h1>This is a test deployment from GitHub to EC2</h1>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <div class="badge" aria-hidden="true">
+          <!-- simple cloud + arrow icon svg inspired by cloud deployment -->
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g fill="none" fill-rule="evenodd">
+              <path d="M20 40h24a10 10 0 0 0 0-20 14 14 0 0 0-28 3A8 8 0 0 0 20 40z" fill="#07202a"/>
+              <path d="M30 30v8l6-4-6-4z" fill="#fffbf0"/>
+            </g>
+          </svg>
+        </div>
+        <div style="flex:1">
+          <h1>Karthik Raj — AWS Themed Profile</h1>
+          <p class="lead">DevOps & cloud-inspired personal page — quick overview of an AWS-like tooling stack and links.</p>
+          <div class="cta">
+            <button class="btn btn--primary" onclick="copyHTML()">Copy HTML</button>
+            <button class="btn btn--ghost" onclick="downloadFile()">Download index.html</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="services">
+        <div class="service">
+          <h3>EC2 — Compute</h3>
+          <p>Virtual machines for running web servers, containers and custom workloads. Use autoscaling for resilience.</p>
+        </div>
+        <div class="service">
+          <h3>S3 — Object Storage</h3>
+          <p>Durable, highly available storage for static websites, backups and artifacts. Great for hosting static content.</p>
+        </div>
+        <div class="service">
+          <h3>Lambda — Serverless</h3>
+          <p>Run short-lived functions triggered by events without managing servers — pay per execution.</p>
+        </div>
+        <div class="service">
+          <h3>VPC & Networking</h3>
+          <p>Design private networks, security groups, and routing to control access between services.</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div>Made with ☁️ and some imagination — Karthik</div>
+        <div>Theme: AWS-inspired • Color: <strong>Orange</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <svg class="cloud-illustration" width="420" height="260" viewBox="0 0 420 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M80 150c40-60 140-60 180 0 60 0 120 40 120 80H20c0-40 40-80 60-80z" fill="url(#g)"/>
+    <defs>
+      <linearGradient id="g" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0" stop-color="#FF9900" stop-opacity="0.12"/>
+        <stop offset="1" stop-color="#FF9900" stop-opacity="0.02"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <script>
+    // copy full HTML to clipboard
+    function copyHTML(){
+      const html = `<!doctype html>\n${document.documentElement.outerHTML}`;
+      navigator.clipboard.writeText(html).then(()=>{
+        alert('Full page HTML copied to clipboard.');
+      }).catch(()=>alert('Could not copy — your browser may block clipboard access.'))
+    }
+
+    // download file
+    function downloadFile(){
+      const blob = new Blob([document.documentElement.outerHTML],{type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'index.html'; document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    }
+  </script>
 </body>
 </html>
